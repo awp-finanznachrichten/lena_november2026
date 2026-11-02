@@ -1,5 +1,5 @@
 #Set Working Path
-MAIN_PATH <- "C:/Users/sw/OneDrive/SDA_eidgenoessische_abstimmungen/20260927_LENA_Abstimmungen"
+MAIN_PATH <- "C:/Users/sw/OneDrive/SDA_eidgenoessische_abstimmungen/20261129_LENA_Abstimmungen"
 #MAIN_PATH <- "C:/Automatisierungen/lena_november2025"
 setwd(MAIN_PATH)
 
@@ -49,7 +49,7 @@ if (time_check_national == FALSE || simulation == TRUE) {
   colnames(data_overview) <- c("Ja","Nein","Abstimmung_de","Abstimmung_fr","Abstimmung_it")
 
   ###Nationale Abstimmungen###
-  source("./Nationale_Abstimmungen/nationale_abstimmungen_neu.R", encoding="UTF-8")
+  source("./Nationale_Abstimmungen/nationale_abstimmungen.R", encoding="UTF-8")
 
   ###Output Übersichtsgrafiken###
   source("./Nationale_Abstimmungen/outputs_overview.R", encoding="UTF-8")

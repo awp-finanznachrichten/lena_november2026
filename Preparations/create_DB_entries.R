@@ -1,4 +1,4 @@
-MAIN_PATH <- "C:/Users/sw/OneDrive/SDA_eidgenoessische_abstimmungen/20260927_LENA_Abstimmungen"
+MAIN_PATH <- "C:/Users/sw/OneDrive/SDA_eidgenoessische_abstimmungen/20261129_LENA_Abstimmungen"
 setwd(MAIN_PATH)
 
 #Load Libraries and Functions
@@ -20,6 +20,10 @@ metadata <- as.data.frame(read_excel(paste0("Texte/Textbausteine_LENA_",abstimmu
 metadata$Vorlage_d <- str_replace_all(metadata$Vorlage_d ,"'","\\\\'")
 metadata$Vorlage_f <- str_replace_all(metadata$Vorlage_f ,"'","\\\\'")
 metadata$Vorlage_i <- str_replace_all(metadata$Vorlage_i ,"'","\\\\'")
+
+metadata$Catchword_d <- str_replace_all(metadata$Catchword_d ,"'","\\\\'")
+metadata$Catchword_f <- str_replace_all(metadata$Catchword_f ,"'","\\\\'")
+metadata$Catchword_i <- str_replace_all(metadata$Catchword_i ,"'","\\\\'")
 
 mydb <- connectDB(db_name = "sda_votes")
 for (m in 1:nrow(metadata)) {

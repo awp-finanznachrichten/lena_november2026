@@ -1,7 +1,7 @@
 #Welche Abstimmung?
-abstimmung_date <- "September2026"
-voting_date <- "2026-09-27"
-date_voting <- "20260927"
+abstimmung_date <- "November2026"
+voting_date <- "2026-11-29"
+date_voting <- "20261129"
 
 #Save texts? Simulation? Default FALSE
 simulation <- FALSE

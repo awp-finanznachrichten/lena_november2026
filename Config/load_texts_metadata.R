@@ -39,7 +39,7 @@ dbDisconnectAll()
 datawrapper_auth(Sys.getenv("DW_KEY"), overwrite = TRUE)
 
 ###Historical Data (if available)
-data_hist <- fromJSON("./Data/sd-t-17-02-20200927-eidgAbstimmung.json", flatten = TRUE)
+data_hist <- fromJSON("./Data/sd-t-17-02-20240303-eidgAbstimmung.json", flatten = TRUE)
 data_hist <- get_results(data_hist,1,level="communal")
 data_hist <- data_hist %>%
   select(Gemeinde_Nr,
