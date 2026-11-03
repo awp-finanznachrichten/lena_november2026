@@ -238,6 +238,9 @@ write.xlsx(texts,paste0("./Texte/",vorlagen_short[i],"_texte.xlsx"),row.names = 
   if (SPECIAL_AREAS == TRUE) {
   source("./Nationale_Abstimmungen/outputs_einzugsgebiete.R", encoding = "UTF-8")
   }
+  if (SPECIAL_ANALYSIS[i] == TRUE) {
+  source("./Nationale_Abstimmungen/outputs_analysis.R", encoding = "UTF-8")  
+  }  
     
   ###Eintrag für Uebersicht
   source("./Nationale_Abstimmungen/entry_overview.R", encoding="UTF-8")

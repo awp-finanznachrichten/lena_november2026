@@ -10,6 +10,9 @@ save_texts <- FALSE
 #Output for special Einzugsgebiete? Default FALSE
 SPECIAL_AREAS <- TRUE
 
+#Output for special Analysis? Default FALSE
+SPECIAL_ANALYSIS <- c(TRUE,FALSE,FALSE,FALSE)
+
 #Mail
 DEFAULT_MAILS <- "contentdevelopment@keystone-sda.ch, robot-notification@awp.ch"
 #DEFAULT_MAILS <- "robot-notification@awp.ch"
