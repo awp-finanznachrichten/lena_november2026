@@ -1,6 +1,6 @@
 ###ANALYSIS GEMEINDEN###
 output_analysis_gemeinden <- results %>%
-  select(Gemeinde_d,
+  select(Gemeinde_Kt_d,
          Ja_Stimmen_In_Prozent,
          Hist_Ja_Stimmen_In_Prozent) %>%
   na.omit()
@@ -14,7 +14,4 @@ output_analysis_gemeinden$resultat <- ifelse(output_analysis_gemeinden$Ja_Stimme
 
 write.csv(output_analysis_gemeinden,paste0("Output_Analysis/",vorlagen_short[i],"_analysis_gemeinden.csv"), na = "", row.names = FALSE, fileEncoding = "UTF-8")
 
-
-
-###ANALYSIS KANTONE####
   
