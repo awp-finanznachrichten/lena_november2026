@@ -1,0 +1,35 @@
+gemeinde_bfs_nr;gemeinde;bezirk_code;bezirk;region_code;region_name;Haupt-PLZ
+111;Bäretswil;105;Hinwil;108;Zürcher Oberland;8344
+297;Bauma;108;Pfäffikon;108;Zürcher Oberland;8494
+112;Bubikon;105;Hinwil;108;Zürcher Oberland;8608
+191;Dübendorf;109;Uster;102;Glattal;8600
+113;Dürnten;105;Hinwil;108;Zürcher Oberland;8635
+192;Egg;109;Uster;107;Pfannenstiel;8132
+193;Fällanden;109;Uster;102;Glattal;8117
+172;Fehraltorf;108;Pfäffikon;108;Zürcher Oberland;8320
+114;Fischenthal;105;Hinwil;108;Zürcher Oberland;8497
+115;Gossau (ZH);105;Hinwil;108;Zürcher Oberland;8625
+116;Grüningen;105;Hinwil;108;Zürcher Oberland;8627
+194;Greifensee;109;Uster;102;Glattal;8606
+117;Hinwil;105;Hinwil;108;Zürcher Oberland;8340
+173;Hittnau;108;Pfäffikon;108;Zürcher Oberland;8335
+296;Illnau-Effretikon;108;Pfäffikon;109;Winterthur und Umgebung;8307
+176;Lindau;108;Pfäffikon;109;Winterthur und Umgebung;8315
+196;Mönchaltorf;109;Uster;108;Zürcher Oberland;8617
+195;Maur;109;Uster;102;Glattal;8124
+177;Pfäffikon;108;Pfäffikon;108;Zürcher Oberland;8330
+118;Rüti (ZH);105;Hinwil;108;Zürcher Oberland;8630
+178;Russikon;108;Pfäffikon;108;Zürcher Oberland;8332
+226;Schlatt (ZH);110;Winterthur;109;Winterthur und Umgebung;8354
+197;Schwerzenbach;109;Uster;102;Glattal;8603
+119;Seegräben;105;Hinwil;108;Zürcher Oberland;8607
+228;Turbenthal;110;Winterthur;109;Winterthur und Umgebung;8488
+198;Uster;109;Uster;108;Zürcher Oberland;8610
+199;Volketswil;109;Uster;102;Glattal;8604
+120;Wald (ZH);105;Hinwil;108;Zürcher Oberland;8636
+200;Wangen-Brüttisellen;109;Uster;102;Glattal;8306
+180;Weisslingen;108;Pfäffikon;109;Winterthur und Umgebung;8484
+121;Wetzikon (ZH);105;Hinwil;108;Zürcher Oberland;8620
+181;Wila;108;Pfäffikon;108;Zürcher Oberland;8492
+182;Wildberg;108;Pfäffikon;108;Zürcher Oberland;8489
+231;Zell (ZH);110;Winterthur;109;Winterthur und Umgebung;8487
