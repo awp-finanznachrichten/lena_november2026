@@ -1,6 +1,6 @@
 ###ANALYSIS GEMEINDEN###
 output_analysis_gemeinden <- results %>%
-  select(Gemeinde_Kt_d,
+  select(Gemeinde_KT_d,
          Ja_Stimmen_In_Prozent,
          Hist_Ja_Stimmen_In_Prozent) %>%
   na.omit()
