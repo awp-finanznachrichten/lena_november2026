@@ -39,8 +39,14 @@ dbDisconnectAll()
 datawrapper_auth(Sys.getenv("DW_KEY"), overwrite = TRUE)
 
 ###Historical Data (if available)
-data_hist <- fromJSON("./Data/sd-t-17-02-20240303-eidgAbstimmung.json", flatten = TRUE)
-data_hist <- get_results(data_hist,1,level="communal")
+DATA_SOURCES_HIST <- c("sd-t-17-02-20240303-eidgAbstimmung.json",
+                       "sd-t-17-02-20260308-eidgAbstimmung.json")
+LEVEL_VOTING_HIST <- c(1,6)
+
+data_hist_all <- list()
+for (d in 1:length(DATA_SOURCES_HIST)) {
+data_hist <- fromJSON(paste0("./Data/",DATA_SOURCES_HIST[d]), flatten = TRUE)
+data_hist <- get_results(data_hist,LEVEL_VOTING_HIST[d],level="communal")
 data_hist <- data_hist %>%
   select(Gemeinde_Nr,
          Hist_Ja_Stimmen_In_Prozent = jaStimmenInProzent,
@@ -48,3 +54,5 @@ data_hist <- data_hist %>%
          Hist_Nein_Stimmen_Absolut = neinStimmenAbsolut) %>%
   mutate(Hist_Nein_Stimmen_In_Prozent = 100 - Hist_Ja_Stimmen_In_Prozent)
 data_hist <- na.omit(data_hist)
+data_hist_all[[d]] <- data_hist
+}

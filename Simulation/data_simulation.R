@@ -16,7 +16,7 @@
  }
  }
 
-#Kantonal
+###Kantonal
 for (k in 1:length(json_data_kantone[["kantone"]][["vorlagen"]])) {
 count_vorlagen <- length(json_data_kantone$kantone$vorlagen[[k]]$resultat.jaStimmenInProzent)  
 json_data_kantone$kantone$vorlagen[[k]]$vorlageBeendet <- TRUE

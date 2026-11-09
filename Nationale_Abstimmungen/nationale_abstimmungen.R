@@ -1,3 +1,4 @@
+HISTORY_COUNT <- 1
 for (i in 1:length(vorlagen_short)) {
 
   cat(paste0("\nErmittle Daten für folgende Vorlage: ",vorlagen$text[i],"\n"))
@@ -124,18 +125,19 @@ for (i in 1:length(vorlagen_short)) {
     results <- other_storyfinder(results)
     }
     
-
     #Historischer Vergleich (falls vorhanden)
     if (votes_metadata_CH$remarks[i] == "history_comparison") {
       hist_check <- TRUE 
-      results <- merge(results,data_hist,all.x = TRUE)
+      results <- merge(results,data_hist_all[[HISTORY_COUNT]],all.x = TRUE)
       results <- hist_storyfinder(results)
+      HISTORY_COUNT <- HISTORY_COUNT + 1
     }
     
     if (votes_metadata_CH$remarks[i] == "history_comparison_special") {
       hist_check <- TRUE 
-      results <- merge(results,data_hist,all.x = TRUE)
+      results <- merge(results,data_hist_all[[HISTORY_COUNT]],all.x = TRUE)
       results <- hist_storyfinder_special(results)
+      HISTORY_COUNT <- HISTORY_COUNT + 1
     }
 
     if (votes_metadata_CH$remarks[i] == "history_comparison_several") {

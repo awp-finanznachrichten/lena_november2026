@@ -1,10 +1,8 @@
+#####EIDGENÖSSISCHE ABSTIMMUNGEN#####
 res <- GET(FEED_NATIONAL)
 json_data <- fromJSON(rawToChar(res$content), flatten = TRUE)
 
-res <- GET(FEED_CANTONAL)
-json_data_kantone <- fromJSON(rawToChar(res$content), flatten = TRUE)
-
-cat("Aktuelle Abstimmungsdaten geladen\n")
+cat("Aktuelle eidgenössische Abstimmungsdaten geladen\n")
 
 ###Anzahl, Name und Nummer der Vorlagen von JSON einlesen
 
@@ -53,7 +51,12 @@ cat("Aktuelle Abstimmungsdaten geladen\n")
  vorlagen_selection <- votes_metadata %>% 
    filter(area_ID == "CH")
  vorlagen_short <- vorlagen_selection$spreadsheet
-
+ 
+#####KANTONALE ABSTIMMUNGEN#####
+res <- GET(FEED_CANTONAL)
+json_data_kantone <- fromJSON(rawToChar(res$content), flatten = TRUE)
+cat("Aktuelle kantonale Abstimmungsdaten geladen\n")
+ 
 ###Kurznamen und Nummern kantonale Vorlagen 
 kantonal_selection <- votes_metadata %>% 
   filter(area_ID != "CH",
