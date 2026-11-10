@@ -124,7 +124,7 @@ for (i in 1:length(vorlagen_short)) {
     results <- merge(results,results_othervote,all.x = TRUE)
     results <- other_storyfinder(results)
     }
-    
+
     #Historischer Vergleich (falls vorhanden)
     if (votes_metadata_CH$remarks[i] == "history_comparison") {
       hist_check <- TRUE 
@@ -240,7 +240,7 @@ write.xlsx(texts,paste0("./Texte/",vorlagen_short[i],"_texte.xlsx"),row.names = 
   if (SPECIAL_AREAS == TRUE) {
   source("./Nationale_Abstimmungen/outputs_einzugsgebiete.R", encoding = "UTF-8")
   }
-  if (SPECIAL_ANALYSIS[i] == TRUE) {
+  if ((SPECIAL_ANALYSIS[i] == TRUE) & (hist_check == TRUE)) {
   source("./Nationale_Abstimmungen/outputs_analysis.R", encoding = "UTF-8")  
   }  
     

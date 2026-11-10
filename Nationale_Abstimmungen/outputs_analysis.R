@@ -13,5 +13,3 @@ output_analysis_gemeinden$resultat <- ifelse(output_analysis_gemeinden$Ja_Stimme
                                              "AHV-Finanzierung abgelehnt")
 
 write.csv(output_analysis_gemeinden,paste0("Output_Analysis/",vorlagen_short[i],"_analysis_gemeinden.csv"), na = "", row.names = FALSE, fileEncoding = "UTF-8")
-
-  
