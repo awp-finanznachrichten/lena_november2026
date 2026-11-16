@@ -1,5 +1,5 @@
 #Set Working Path
-MAIN_PATH <- "C:/Users/sw/OneDrive/SDA_eidgenoessische_abstimmungen/20260927_LENA_Abstimmungen"
+MAIN_PATH <- "C:/Users/sw/OneDrive/SDA_eidgenoessische_abstimmungen/20261129_LENA_Abstimmungen"
 setwd(MAIN_PATH)
 
 #Load Libraries and Functions
