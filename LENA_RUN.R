@@ -56,8 +56,8 @@ if (time_check_national == FALSE || simulation == TRUE) {
   source("./Config/commit.R", encoding="UTF-8")
 
   #Tabellen aktualisieren
-  #source("./top_flop/top_flop_run.R", encoding="UTF-8")
-  #source("./top_cantons/run_top_flop_cant.R", encoding="UTF-8")
+  source("./top_flop/top_flop_run.R", encoding="UTF-8")
+  source("./top_cantons/run_top_flop_cant.R", encoding="UTF-8")
 }
 
 if (time_check_kantonal == FALSE || simulation == TRUE) {   

@@ -1,6 +1,6 @@
 ##importer res. cantonaux
 
-link <- "https://ogd-static.voteinfo-app.ch/v1/ogd/sd-t-17-02-20260927-eidgAbstimmung.json"
+link <- "https://ogd-static.voteinfo-app.ch/v1/ogd/sd-t-17-02-20261129-eidgAbstimmung.json"
 
 vot_raw <- jsonlite::fromJSON(link)
 
@@ -28,8 +28,10 @@ mapping_issues <- vot_raw$schweiz$vorlagen %>%
   group_by(vorlagenId) %>%
   #mutate(vorlagenId = case_when(vorlagenId == 6780 ~ 6800, #a supprimer! 6821,6822,6830,6840,6850
    #                             vorlagenId == 6790 ~ 6810)) %>% #a supprimer
-  mutate(issue_number = case_when(vorlagenId == 6880 ~ 1,
-                                  vorlagenId == 6890 ~ 2)) %>%
+  mutate(issue_number = case_when(vorlagenId == 6900 ~ 1,
+                                  vorlagenId == 6910 ~ 2,
+                                  vorlagenId == 6920 ~ 3,
+                                  vorlagenId == 6930 ~ 4)) %>%
   tidyr::unnest(vorlagenTitel) %>%
   dplyr::left_join(vorlagen_names, join_by("vorlagenId" == "Vorlage_ID")) %>%
   select(vorlagenId,langKey, issue_number, text,Vorlage_f, Vorlage_d, Vorlage_i)
@@ -66,7 +68,9 @@ cant <- vot_raw$schweiz$vorlagen$kantone %>%
     issue_number = dplyr::row_number(),
     issue = dplyr::case_when( #adapter au nombre de votation
       issue_number == 1 ~ issues_list_fr[1],
-      issue_number == 2 ~ issues_list_fr[2]
+      issue_number == 2 ~ issues_list_fr[2],
+      issue_number == 3 ~ issues_list_fr[3],
+      issue_number == 4 ~ issues_list_fr[4]
     )
   ) %>%
   tidyr::unnest(resultat) %>%
@@ -83,18 +87,20 @@ cant <- vot_raw$schweiz$vorlagen$kantone %>%
   dplyr::rename(name = canton_name) %>%
   dplyr::left_join(mapping_issues, by = c("issue_number" = "issue_number")) %>%
   filter(langKey == "fr",
-         issue_number !=3) 
+         #issue_number !=3
+         ) 
 
 #glimpse(cant)
 
 #set.seed(123)  # optionnel : pour reproductibilité
 
 #cant_test <- cant %>%
-#  dplyr::mutate(
-#    cantonJaStimmenInProzent = round(runif(n(), 0, 100), 1),
-#    cantonNoStimmenInProzent = round(runif(n(), 0, 100), 1)
-#  )
+ # dplyr::mutate(
+  #  cantonJaStimmenInProzent = round(runif(n(), 0, 100), 1),
+  #  cantonNoStimmenInProzent = round(runif(n(), 0, 100), 1)
+  #)
 
 #glimpse(cant_test)
 
 #cant <- cant_test
+
