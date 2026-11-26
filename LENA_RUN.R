@@ -21,7 +21,7 @@ source("./Config/load_json_data.R",encoding = "UTF-8")
 
 #Simulate Data (if needed)
 if (simulation == TRUE) {
-source("./Simulation/data_simulation.R")  
+source("./Simulation/data_simulation.R")
 }  
 
 #Aktualisierungs-Check: Gibt es neue Daten?

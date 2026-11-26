@@ -5,7 +5,7 @@ date_voting <- "20261129"
 
 #Save texts? Simulation? Default FALSE
 simulation <- TRUE
-save_texts <- TRUE
+save_texts <- FALSE
 
 #Output for special Einzugsgebiete? Default FALSE
 SPECIAL_AREAS <- TRUE
