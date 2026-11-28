@@ -1,7 +1,7 @@
 library(RCurl)
 
 ###Set path with the charts
-setwd("C:/Users/simon/OneDrive/SDA_eidgenoessische_abstimmungen/20260927_LENA_Abstimmungen/Grafiken")
+setwd("C:/Users/simon/OneDrive/SDA_eidgenoessische_abstimmungen/20261129_LENA_Abstimmungen/Grafiken")
 
 ###Get Folders
 folders <- list.dirs(recursive = FALSE)
@@ -15,8 +15,8 @@ setwd(folder)
 zipfile_name <- list.files(pattern=".zip")
 
 #Upload data
-ftp_adress <- paste0("ftp://ftp.keystone.ch/",zipfile_name)
-ftpUpload(zipfile_name, ftp_adress,userpwd="keyg_in:5r6368vz")
+ftp_adress <- paste0(Sys.getenv("ftp_url_sda"),zipfile_name)
+ftpUpload(zipfile_name, ftp_adress,userpwd=Sys.getenv("ftp_visual"))
 
 #set wd back
 setwd("..")
@@ -24,3 +24,5 @@ setwd("..")
 print(paste0("Chart ",zipfile_name," uploaded successfully"))
 Sys.sleep(5)
 }
+
+
